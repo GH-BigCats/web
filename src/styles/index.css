@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+nav ul li.active {
+    background-color: unset;
+}
+
+#main-nav-bar-buttons {
+    margin-left: 30px;
+}
+
+.app {
+    padding-top: 75px;
+}
+
+.home-banner {
+    height: 250px;
+    margin: auto;
+    display: block;
+}
+
+.MyProfile-header {
+    background-color: #222;
+    height: 250px;
+    color: white;
+}
+
+div.login {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+div.profile-image-button-container {
+    text-align: center;
+}
+
+.profile-image-circle {
+    margin-top: -100px;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.profile-image-circle-mini {
+    display: inline-block;
+    margin-right: 10px;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+
+}
+
+.profile-image-circle img {
+    width: 100%;
+}
+
+.profile-image-circle-mini img {
+    width: 100%;
+}
+
+.profile-image-circle-mini-container {
+    margin-bottom: 25px;
+}
+
+fab-with-image {
+    padding: 0px;
+}
+
+.page-header-text {
+    margin-top: 15px;
+}
+
+.switch-button-group {
+    float: left;
+    margin-right: 30px;
+}
+
+.switch {
+    margin-bottom: 30px;
+}
+
+.container {
+    margin-bottom: 150px;
+}
+
+.default-back-button {
+    padding-left: 0px;
+    padding-right: 10px
+}
+
+.icon-in-button {
+    vertical-align: middle;
+}
+
+.back-button-arrow {
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: -2px;
+}
+
+.invalid {
+  border-bottom-style: solid;
+  border-color: red;
+  border-width: 1.5px;
+}
+
+.alert {
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: #e07875;
+  border-color: #a9322e;
+  color: #7f2522;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.material-icons {
+    font-size: 18px;
+}
+
+.panel-header {
+    margin: -15px -15px 0px -15px;
+    height: 15px;
+    padding: 0 5px;
+}
+
+.danger {
+    color: #e82727;
+}
+
+.center-content {
+    text-align: center;
+}
+
+.pull-right {
+    text-align: right;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.icon-button {
+    padding: 0 10px;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
