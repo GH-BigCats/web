@@ -63,14 +63,14 @@ class Charts extends React.Component {
                 left: '300px',
             }
         }
-        let languageChartData = []
-        Object.keys(language).forEach((key, i) => {
-            languageChartData.push([i, language[key]])
-        })
-        if(!languageChartData.length) {
-            console.log('none')
-            languageChartData = [[0,2]]
-        }
+        let languageChartData = [[0,2], [6,5]]
+        // Object.keys(language).forEach((key, i) => {
+        //     languageChartData.push([i, language[key]])
+        // })
+        // if(!languageChartData.length) {
+        //     console.log('none')
+        //     languageChartData = [[0,2]]
+        // }
         console.log(languageChartData)
         const languageData = [
             {
