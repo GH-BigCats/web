@@ -4,10 +4,13 @@ class MayaConnect extends React.Component {
     render () {
         return (
             <div className='maya-connect'>
-                <div className='connect'>
+                <div className='connect-left'>
 
                 </div>
-                <div className='connect'>
+                <div className='connect-center'>
+
+                </div>
+                <div className='connect-right'>
 
                 </div>
             </div>
