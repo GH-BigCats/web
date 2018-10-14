@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  background: #EBE7E7;
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -8,7 +10,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#root {
+    height: 100%;
+}
+
+.charts-container {
+    background: #8C8C8E;
+    height: 60%;
+    width: 100%;
+}
+
+.chart {
+    display: inline-block;
+    width: 40%;
+    height: 90%;
+    margin: 20px 10px;
+}
+
+.table-left-column {
+    float: left;
+}
+
+.maya-connect {
+    background: #50BF9E;
+    height: 40%;
+    width: 100%;
+}
+
+.connect {
+    display: inline-block;
+    background: white;
+    width: 40%;
+    height: 60%;
+    margin: 20px 10px;
 }

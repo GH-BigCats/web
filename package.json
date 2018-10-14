@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "react": "^16.5.2",
+    "react-basic-table": "^1.0.14",
+    "react-charts": "^1.0.10",
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.4"
   },
