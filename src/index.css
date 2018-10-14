@@ -22,25 +22,48 @@ body {
 
 .chart {
     display: inline-block;
-    width: 40%;
+    width: 50%;
     height: 90%;
-    margin: 20px 10px;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    float:left;
 }
 
-.table-left-column {
+svg {
+    position: relative;
+    width: 100%;
     float: left;
 }
-
-.maya-connect {
-    background: #50BF9E;
-    height: 40%;
-    width: 100%;
+svg {
+    width: 100% !important;
+    height: 100% !important;
+}
+.react-basic-table {
+    width: auto;
+    float:none !important;
+    background-color: white !important;
+    border-radius: 5px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    bottom: auto !important;
+    left: auto !important;
+    position: absolute !important;
 }
 
-.connect {
-    display: inline-block;
-    background: white;
-    width: 40%;
-    height: 60%;
-    margin: 20px 10px;
+svg:nth-of-type(1) > .react-basic-table {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+}
+svg:nth-of-type(2) > .react-basic-table {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+}
+.table tbody > tr:nth-of-type(odd) {
+    background-color: rgba(127, 127, 127, 0.15);
+}
+@media screen and (max-width: 800px) {
+    .chart {
+        width: 100%;
+    }
 }

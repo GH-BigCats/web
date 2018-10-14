@@ -1,6 +1,7 @@
 import React from 'react'
-import { Chart, Axis, Series, Tooltip, Cursor, Pie } from 'react-charts'
+import PieChart from "react-svg-piechart"
 import ReactBasicTable from 'react-basic-table'
+import {gradient} from "./utils";
 
 class Charts extends React.Component {
     constructor () {
@@ -49,8 +50,36 @@ class Charts extends React.Component {
         })
     }
 
+    getPieChartData() {
+        const {language, intent} = this.state;
+        const uniqueLanguages = Object.keys(language);
+        const languageColors = gradient("#22594e", "#a1d9ce", uniqueLanguages.length);
+
+        const uniqueIntents = Object.keys(intent);
+        const intentColors = gradient("#22594e", "#a1d9ce", uniqueLanguages.length);
+
+        let languageData = [];
+        uniqueLanguages.forEach((key, i) => {
+            languageData.push({
+                title: key,
+                value: language[key],
+                color: languageColors[i]
+            })
+        });
+
+        let intentData = [];
+        uniqueIntents.forEach((key, i) => {
+            intentData.push({
+                title: key,
+                value: intent[key],
+                color: intentColors[i]
+            })
+        });
+
+        return {languageData, intentData};
+    }
+
     render () {
-        const { language, intent } = this.state
         const styles = {
             table: {
                 display: 'inline-block',
@@ -62,28 +91,8 @@ class Charts extends React.Component {
                 bottom: '100px',
                 left: '300px',
             }
-        }
-        let languageChartData = []
-        Object.keys(language).forEach((key, i) => {
-            languageChartData.push([i, language[key]])
-        })
-        if(!languageChartData.length) {
-            console.log('none')
-            languageChartData = [[0,2]]
-        }
-        console.log(languageChartData)
-        const languageData = [
-            {
-                label: "Series 2",
-                data: languageChartData
-            }
-        ]
-        const catagoryData = [
-            {
-                label: "Series 2",
-                data: [[0, 5], [0, 6], [0, 4]]
-            }
-        ]
+        };
+
         const languageColumns = ['Language', '#']
         const languageRows = [
             [
@@ -127,25 +136,45 @@ class Charts extends React.Component {
             ]
         ]
 
+        const {languageData, intentData} = this.getPieChartData();
+
+
         return (
             <div className='charts-container'>
                 <div className='chart'>
-                    <Chart data={languageData}>
-                      <Axis type='pie' />
-                      <Series type={Pie} showPoints={true} />
-                      <Tooltip />
-                    </Chart>
+                    <PieChart
+                        data={languageData}
+                        // If you need expand on hover (or touch) effect
+                        expandOnHover
+                        // If you need custom behavior when sector is hovered (or touched)
+                        onSectorHover={(d, i, e) => {
+                            if (d) {
+                                console.log("Mouse enter - Index:", i, "Data:", d, "Event:", e)
+                            } else {
+                                console.log("Mouse leave - Index:", i, "Event:", e)
+                            }
+                        }}
+                    />
                     <div style={styles.table}>
-                        <ReactBasicTable rows={languageRows} columns={languageColumns} />
+                        <ReactBasicTable rows={languageRows} columns={languageColumns} className="react-basic-table" />
                     </div>
                 </div>
                 <div className='chart'>
-                    <Chart data={catagoryData}>
-                      <Axis type='pie' />
-                      <Series type={Pie} showPoints={true} />
-                    </Chart>
+                    <PieChart
+                        data={intentData}
+                        // If you need expand on hover (or touch) effect
+                        expandOnHover
+                        // If you need custom behavior when sector is hovered (or touched)
+                        onSectorHover={(d, i, e) => {
+                            if (d) {
+                                console.log("Mouse enter - Index:", i, "Data:", d, "Event:", e)
+                            } else {
+                                console.log("Mouse leave - Index:", i, "Event:", e)
+                            }
+                        }}
+                    />
                     <div style={styles.table}>
-                        <ReactBasicTable rows={categoryRows} columns={categoryColumns} />
+                        <ReactBasicTable rows={categoryRows} columns={categoryColumns} className="react-basic-table" />
                     </div>
                 </div>
             </div>
